@@ -1,0 +1,21 @@
+<?php
+/*	var_dump("cpf");*/
+error_reporting(E_ALL);
+
+
+	$_cpf = $_POST['cpf'];
+	$contcpf = strlen($_cpf);
+
+	if($contcpf > 11){
+		$erro = "erro, mais de 11";
+  		header('Location: http://localhost:8080/index.php?success=false&msg=' . $erro);
+   	}
+	else if($contcpf < 11){
+		$erro = "erro, menos de 11";
+  		header("Location: http://localhost:8080/index.php?success=false&msg=" . $erro);
+	} else {
+		$erro = "Todos os dados corretos";
+		header('Location: http://localhost:8080/index.php?success=true&msg=' . $erro);
+	}
+	/*die(" ");*/
+?>
